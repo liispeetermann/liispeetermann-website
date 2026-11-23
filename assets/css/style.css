@@ -1,3 +1,5 @@
+/* Heading font. To go back to Castoro, change Newsreader to Castoro on the next line. */
+:root{--serif:'Newsreader',Georgia,serif}
 /* Liis Peetermann — site styles */
 html{scroll-behavior:smooth}
 body{margin:0;background:#f5f0e8}
@@ -18,14 +20,14 @@ img{max-width:100%}
 .lp .faq details[open] summary::after{content:"\2212"}
 a{color:#1c1c1c}a:hover{color:#555}
 .lp *{box-sizing:border-box}
-.lp .serif{font-family:'Castoro',Georgia,serif;font-weight:400;letter-spacing:-0.02em}
+.lp .serif{font-family:var(--serif);font-weight:400;letter-spacing:0}
 .lp .btn{font-weight:400;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:16px 28px;border-radius:999px;background:#1c1c1c;color:#fbf7f2;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;line-height:1.2}
 .lp .btn:hover{background:#3a3a3a;color:#fbf7f2}
 .lp .btn-outline{background:transparent;color:#1c1c1c;border:1.5px solid #1c1c1c}
 .lp .btn-outline:hover{background:#1c1c1c;color:#fbf7f2}
 .lp .btn-light{background:transparent;color:#f5f0e8;border:1.5px solid #f5f0e8}
 .lp .nav .btn-light:hover{background:#f5f0e8;color:#1c1c1c}
-.lp .label{font-family:'Castoro',Georgia,serif;font-weight:400;font-size:16px;letter-spacing:0.32em;text-transform:uppercase;color:#000;margin:0;white-space:nowrap}
+.lp .label{font-family:var(--serif);font-weight:400;font-size:16px;letter-spacing:0.32em;text-transform:uppercase;color:#000;margin:0;white-space:nowrap}
 .lp .nav a{color:#f5f0e8;text-decoration:none;font-size:15px}
 .lp .nav a:hover{color:#fff}
 .lp .foot a{color:#1c1c1c;font-size:14px}
@@ -54,7 +56,7 @@ a{color:#1c1c1c}a:hover{color:#555}
 .lp .faq .q{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 0;font-family:'Inter',Helvetica,Arial,sans-serif;font-size:19px;line-height:1.4;color:#1c1c1c}
 .lp .faq .q:focus-visible{outline:2px solid #4e1414;outline-offset:4px}
 .lp .faq .ic{font-size:26px;font-weight:300;line-height:1;flex:0 0 auto}
-.lp .legal h3{font-family:'Castoro',Georgia,serif;font-weight:400;letter-spacing:-0.02em;font-size:30px;line-height:1.25;margin:28px 0 0}
+.lp .legal h3{font-family:var(--serif);font-weight:400;letter-spacing:0;font-size:30px;line-height:1.25;margin:28px 0 0}
 .lp .legal p{margin:0;font-size:16px;line-height:1.65}
 .lp .legal ul{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px;font-size:16px;line-height:1.6}
 .lp .legal strong{font-weight:600}
