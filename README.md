@@ -14,6 +14,8 @@ liispeetermann-website/
 ├── contact/index.html          →  /contact/
 ├── payments/index.html         →  /payments/
 ├── faq/index.html              →  /faq/
+├── blog/index.html             →  /blog/               (all articles)
+├── blog/sample-post/index.html →  /blog/sample-post/   (template for one article)
 ├── privacy-policy/index.html   →  /privacy-policy/
 ├── cookie-policy/index.html    →  /cookie-policy/
 ├── terms-of-service/index.html →  /terms-of-service/
@@ -140,3 +142,13 @@ python3 -m http.server 8000
 ```
 
 Then visit http://localhost:8000.
+
+---
+
+## 8. Adding a blog post
+
+1. Copy the folder `blog/sample-post/` and rename the copy, e.g. `blog/warming-foods/`. The folder name becomes the web address (`liispeetermann.com/blog/warming-foods/`), so use lowercase words joined by hyphens.
+2. In the new `index.html`, replace the title (in `<title>`, the meta description and the `<h1>`), the topic label, the date, the photos and the text. Update the canonical and share links to the new address.
+3. On `blog/index.html`, copy one `<a class="post-card" …>` block, point its `href` to the new folder and fill in the photo, topic, title and summary. The `data-cat` value decides which topic filter shows it (nutrition, sleep, nervous-system or tibetan-medicine).
+4. Move your newest article into the *Latest article* block at the top of `blog/index.html`.
+5. Add the new address to `sitemap.xml`.
