@@ -28,11 +28,10 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Newsletter sign-up (footer): MailerLite embedded form, restyled in style.css.
-// The spam check (reCAPTCHA) only loads once someone starts typing their email.
 function ml_webform_success_48970971() {
   document.querySelectorAll('.ml-subscribe-form-48970971').forEach(function (box) {
     box.querySelector('.row-form').style.display = 'none';
-    box.querySelector('.row-success').style.display = '';
+    box.querySelector('.row-success').style.display = 'flex';
   });
 }
 document.addEventListener('DOMContentLoaded', function () {
@@ -42,16 +41,4 @@ document.addEventListener('DOMContentLoaded', function () {
   ml.src = 'https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519';
   document.body.appendChild(ml);
   try { fetch('https://assets.mailerlite.com/jsonp/1984183/forms/205003947951261183/takel'); } catch (e) {}
-  var loaded = false;
-  function loadCaptcha() {
-    if (loaded) return;
-    loaded = true;
-    box.classList.add('captcha-on');
-    var rc = document.createElement('script');
-    rc.src = 'https://www.google.com/recaptcha/api.js';
-    rc.async = true;
-    document.body.appendChild(rc);
-  }
-  box.addEventListener('focusin', loadCaptcha);
-  box.addEventListener('input', loadCaptcha);
 });

@@ -13,8 +13,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Castoro:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/style.css">
-<script src="../assets/js/main.js" defer></script>
+<link rel="stylesheet" href="../assets/css/style.css?v=3">
+<script src="../assets/js/main.js?v=3" defer></script>
 <script src="../assets/js/animations.js" defer></script>
 </head>
 <body>
@@ -95,29 +95,28 @@
 <!-- NEWSLETTER: MailerLite form (account 1984183, form 205003947951261183). Styling lives in style.css, the MailerLite script and thank-you message in main.js. -->
 <div class="ml-form-align-left">
 <div class="ml-form-embedWrapper embedForm">
-<div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+<div class="ml-form-embedBody ml-form-embedBodyDefault row-form" style="display: flex; flex-direction: column; gap: 20px">
 <h3 class="serif" style="margin: 0; font-size: 24px">Subscribe to articles &amp; offers</h3>
-<form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1984183/forms/205003947951261183/subscribe" data-code="" method="post" target="_blank">
+<form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1984183/forms/205003947951261183/subscribe" data-code="" method="post" target="_blank" style="display: flex; flex-direction: column; gap: 20px; margin: 0">
 <div class="ml-form-formContent">
 <div class="ml-form-fieldRow ml-last-item">
 <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-<label for="lp-email" class="sr-only">Email Address</label>
-<input id="lp-email" aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email Address" autocomplete="email">
+<label for="lp-email" class="sr-only" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Email Address</label>
+<input id="lp-email" aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email Address" autocomplete="email" style="display: block; width: 100%; box-sizing: border-box; height: 52px; padding: 0 18px; border: 1px solid #d9d1c4; border-radius: 0; background: #ffffff; font-family: inherit; font-size: 15px; color: #1c1c1c">
 </div>
 </div>
 </div>
-<div class="ml-form-recaptcha ml-validate-required"><div class="g-recaptcha" data-sitekey="6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD"></div></div>
 <input type="hidden" name="ml-submit" value="1">
 <div class="ml-form-embedSubmit">
-<button type="submit" class="btn primary">Sign up</button>
-<button disabled="disabled" style="display: none" type="button" class="btn loading">Signing up…</button>
+<button type="submit" class="btn primary" style="border: 0; cursor: pointer">Sign up</button>
+<button disabled="disabled" style="display: none" type="button" class="btn loading" style="border: 0; opacity: 0.6">Signing up…</button>
 </div>
 <input type="hidden" name="anticsrf" value="true">
 </form>
 </div>
-<div class="ml-form-successBody row-success" style="display: none">
+<div class="ml-form-successBody row-success" style="display: none; flex-direction: column; gap: 20px">
 <h3 class="serif" style="margin: 0; font-size: 24px">Thank you</h3>
-<p>You’re now subscribed. New articles and offers will arrive in your inbox.</p>
+<p style="margin: 0; font-size: 16px; line-height: 1.6">You’re now subscribed. New articles and offers will arrive in your inbox.</p>
 </div>
 </div>
 </div>

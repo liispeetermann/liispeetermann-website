@@ -125,16 +125,10 @@ a{color:#1c1c1c}a:hover{color:#555}
 
 /* ---------- Newsletter form (MailerLite, footer) ---------- */
 .lp .sub-form .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
-.lp .sub-form .row-form,.lp .sub-form .ml-block-form,.lp .sub-form .row-success{display:flex;flex-direction:column;gap:20px}
-.lp .sub-form .row-form[style*="none"],.lp .sub-form .row-success[style*="none"]{display:none !important}
-.lp .sub-form input[type=email]{width:100%;height:52px;padding:0 18px;border:1px solid #d9d1c4;border-radius:0;background:#ffffff;font-family:inherit;font-size:15px;color:#1c1c1c;outline:none}
-.lp .sub-form input[type=email]:focus{border-color:#1c1c1c}
-.lp .sub-form .ml-error input[type=email]{border-color:#4e1414}
+.lp .sub-form input[type=email]{outline:none}
+.lp .sub-form input[type=email]:focus{border-color:#1c1c1c !important}
+.lp .sub-form .ml-error input[type=email]{border-color:#4e1414 !important}
 .lp .sub-form .ml-error input[type=email]::placeholder{color:#4e1414}
-.lp .sub-form .ml-form-recaptcha{display:none}
-.lp .sub-form.captcha-on .ml-form-recaptcha{display:block;min-height:78px}
-.lp .sub-form .ml-form-recaptcha.ml-error iframe{outline:1px solid #4e1414}
 .lp .sub-form .ml-form-embedSubmit .btn{border:0;cursor:pointer}
 .lp .sub-form .ml-form-embedSubmit .btn.loading{opacity:.6;cursor:default}
 .lp .sub-form .row-success p{margin:0;font-size:16px;line-height:1.6}
-@media (max-width: 360px){.lp .sub-form .g-recaptcha{transform:scale(.9);transform-origin:0 0}}
