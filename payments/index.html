@@ -14,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Castoro:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/style.css?v=3">
+<script async src="https://js.stripe.com/v3/buy-button.js"></script>
 <script src="../assets/js/main.js?v=3" defer></script>
 <script src="../assets/js/animations.js" defer></script>
 </head>
@@ -70,8 +71,8 @@
 <div style="background: #ffffff; border-radius: 10px; padding: 36px 32px; display: flex; flex-direction: column; gap: 16px">
 <h3 class="serif" style="margin: 0; font-size: 28px; line-height: 1.2">Pay by card through Stripe</h3>
 <p style="margin: 0; font-size: 16px; line-height: 1.6">Click “Buy” or scan the QR code to get directed to Stripe checkout page.</p>
-<div><a class="btn" href="https://buy.stripe.com/fZu7sLaMxcUB6zGfgLd3i01">Buy</a></div>
-<a href="https://buy.stripe.com/fZu7sLaMxcUB6zGfgLd3i01" style="display: block; margin-top: auto; line-height: 0"><img src="../assets/images/qr-stripe.png" alt="Peetermann Solutions QR code for Stripe payments" style="display: block; width: 100%; max-width: 200px; height: auto"></a>
+<div><stripe-buy-button buy-button-id="buy_btn_1UfF8sDLSiAQQSCozk2OF5NG" publishable-key="pk_live_51MLSXxDLSiAQQSCoaUar4r1pXxYSv3D5ysBcxLaVLtWJ5v4AfDfYM5sQQCek81mxUWHRbWvlSGIKdHEop0S2ATdf00MFAONPiY"></stripe-buy-button></div>
+<a href="https://buy.stripe.com/8x200j1bX3k1gag0lRd3i02" style="display: block; margin-top: auto; line-height: 0"><img src="../assets/images/qr-stripe-2.png" alt="Peetermann Solutions QR code for Stripe payments" style="display: block; width: 100%; max-width: 200px; height: auto"></a>
 </div>
 <div style="background: #ffffff; border-radius: 10px; padding: 36px 32px; display: flex; flex-direction: column; gap: 16px">
 <h3 class="serif" style="margin: 0; font-size: 28px; line-height: 1.2">Make a wire transfer</h3>
