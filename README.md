@@ -94,10 +94,8 @@ DNS changes can take a few minutes up to 24–48 hours. Check GitHub's current g
 
 ## 4. Things to set up before going live
 
-1. **Contact form.** GitHub Pages can't send email by itself. Right now, pressing *Submit* opens the visitor's email app with a message addressed to lpeetermann@gmail.com. For messages that arrive automatically, sign up for a free form service such as **Formspree** (https://formspree.io), then in `contact/index.html`:
-   - change `<form id="contact-form" …>` to `<form id="contact-form" action="https://formspree.io/f/YOUR-ID" method="POST" …>`
-   - and remove the `contact-form` block at the bottom of `assets/js/main.js`.
-2. **Newsletter sign-up (footer).** The email field is design-only. Connect it to your newsletter tool (e.g. Mailchimp, MailerLite, Kit) by pasting the form `action` URL they give you onto the footer `<form>` on every page.
+1. **Contact form.** Messages go to your Google Form "Liis Peetermann Website Contact Form" and are saved in its linked Google Sheet. To get an email for each message, open the form → **Responses** → ⋮ → **Get email notifications for new responses**. If you add, remove or rename questions in the Google Form, the field names in `contact/index.html` (`entry.…`) need updating to match.
+2. **Newsletter sign-up (footer).** Connected to MailerLite (form 205003947951261183). After going live, sign up once with your own email to check it arrives.
 3. **Gift a session buttons** currently go to the Contact page. When you have a gift checkout (e.g. a Stripe payment link or gift card), replace the links on `giftsession/index.html`, `index.html` and the top banner.
 4. **Cookie banner.** Your Cookie Policy describes a consent banner. The new site sets no tracking cookies, but if you add Google Analytics or a Meta Pixel, add a consent tool (e.g. Cookiebot, CookieYes) first.
 5. **Payments.** The Stripe *Buy* button and both QR codes point to your existing Stripe and Wise links. Scan both QR codes once to double-check.

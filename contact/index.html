@@ -13,8 +13,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Castoro:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/style.css?v=3">
-<script src="../assets/js/main.js?v=3" defer></script>
+<link rel="stylesheet" href="../assets/css/style.css?v=4">
+<script src="../assets/js/main.js?v=5" defer></script>
 <script src="../assets/js/animations.js" defer></script>
 </head>
 <body>
@@ -61,15 +61,22 @@
 <p style="margin: 0; font-size: 16px; line-height: 1.65">Whether you’d like to know more about the consultation process, discuss whether this approach is right for you, or have another inquiry, feel free to get in touch.</p>
 <p style="margin: 0; font-size: 16px; line-height: 1.65">You may also find answers to common questions in the <a class="inline-link" href="../faq/">FAQ section</a> before sending your message.</p>
 </div>
-<form id="contact-form" style="display: flex; flex-direction: column; gap: 32px">
+<!-- CONTACT FORM: sends to the Google Form "Liis Peetermann Website Contact Form" (answers go to its linked Google Sheet). Field names are the Google Form entry IDs. -->
+<form id="contact-form" data-endpoint="https://docs.google.com/forms/d/e/1FAIpQLSdFfCPSB5plwIQQz_ZizjrT90TeJqUqqd4FGo14JriR229wHw/formResponse" style="display: flex; flex-direction: column; gap: 32px">
+<div aria-hidden="true" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden"><label for="cf-website">Leave this empty</label><input id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
 <div class="names" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px">
-<div class="field"><label for="cf-first">First name (required)</label><input id="cf-first" name="first" type="text" autocomplete="given-name" required></div>
-<div class="field"><label for="cf-last">Last name (required)</label><input id="cf-last" name="last" type="text" autocomplete="family-name" required></div>
+<div class="field"><label for="cf-first">First name (required)</label><input id="cf-first" name="entry.656958035" type="text" autocomplete="given-name" required></div>
+<div class="field"><label for="cf-last">Last name (required)</label><input id="cf-last" name="entry.1458579367" type="text" autocomplete="family-name" required></div>
 </div>
-<div class="field"><label for="cf-email">Email (required)</label><input id="cf-email" name="email" type="email" autocomplete="email" required></div>
-<div class="field"><label for="cf-message">Message (required)</label><textarea id="cf-message" name="message" required></textarea></div>
+<div class="field"><label for="cf-email">Email (required)</label><input id="cf-email" name="entry.1411955902" type="email" autocomplete="email" required></div>
+<div class="field"><label for="cf-message">Message (required)</label><textarea id="cf-message" name="entry.1131847809" required></textarea></div>
 <div><button type="submit" class="btn" style="border: 0; cursor: pointer">Send</button></div>
+<p class="form-status" role="status" aria-live="polite" style="display: none; margin: 0; font-size: 16px; line-height: 1.6"></p>
 </form>
+<div class="form-thanks" role="status" style="display: none; flex-direction: column; gap: 16px">
+<h3 class="serif" style="margin: 0; font-size: 30px; line-height: 1.25">Thank you for your message</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.65">I read every message personally and will reply to you by email, usually within two business days.</p>
+</div>
 </div>
 </section>
 

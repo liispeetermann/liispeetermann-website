@@ -1,4 +1,4 @@
-// Mobile menu, FAQ (one open at a time) and contact form → email
+// Mobile menu, FAQ (one open at a time), contact form and newsletter sign-up
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.menu-toggle').forEach(function (btn) {
     var menu = document.getElementById(btn.getAttribute('aria-controls'));
@@ -14,15 +14,32 @@ document.addEventListener('DOMContentLoaded', function () {
       if (d.open) items.forEach(function (o) { if (o !== d) o.open = false; });
     });
   });
+  // Contact form: sends to a Google Form (answers are saved in its linked Google Sheet).
+  // The Google Form address is in data-endpoint on the <form> in contact/index.html.
   var form = document.getElementById('contact-form');
   if (form) {
+    var status = form.querySelector('.form-status');
+    var thanks = document.querySelector('.form-thanks');
+    var btn = form.querySelector('button[type=submit]');
+    function say(msg) { status.textContent = msg; status.style.display = msg ? 'block' : 'none'; }
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var f = form.elements;
-      var name = (f.first.value + ' ' + f.last.value).trim();
-      var subject = 'Website enquiry' + (name ? ' from ' + name : '');
-      var body = f.message.value + '\n\n' + name + '\n' + f.email.value;
-      window.location.href = 'mailto:lpeetermann@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      var endpoint = form.getAttribute('data-endpoint');
+      if (!endpoint) { say('Sorry, the form is not connected yet. Please try again soon.'); return; }
+      var data = new URLSearchParams(new FormData(form));
+      if (data.get('website')) { form.style.display = 'none'; if (thanks) thanks.style.display = 'flex'; return; } // spam trap
+      data.delete('website');
+      btn.disabled = true; btn.textContent = 'Sending…'; say('');
+      // Google Forms doesn't allow reading its reply from another site, so a completed request counts as sent.
+      fetch(endpoint, { method: 'POST', mode: 'no-cors', body: data })
+        .then(function () {
+          form.style.display = 'none';
+          if (thanks) thanks.style.display = 'flex';
+        })
+        .catch(function () {
+          say('Sorry, something went wrong and your message was not sent. Please try again in a moment.');
+        })
+        .then(function () { btn.disabled = false; btn.textContent = 'Send'; });
     });
   }
 });
